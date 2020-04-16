@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0f6e527e911bbc52b02bd14d72325cf5",
+    "revision": "59a82c828b88b935018df1ba4d2547a3",
     "url": "/collegeasaninvestment/index.html"
   },
   {
