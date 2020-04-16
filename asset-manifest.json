@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/collegeasaninvestment/static/css/main.d5e0111c.chunk.css",
-    "main.js": "/collegeasaninvestment/static/js/main.e22a035a.chunk.js",
-    "main.js.map": "/collegeasaninvestment/static/js/main.e22a035a.chunk.js.map",
+    "main.css": "/collegeasaninvestment/static/css/main.f00eacab.chunk.css",
+    "main.js": "/collegeasaninvestment/static/js/main.dfd7cd35.chunk.js",
+    "main.js.map": "/collegeasaninvestment/static/js/main.dfd7cd35.chunk.js.map",
     "runtime-main.js": "/collegeasaninvestment/static/js/runtime-main.684dcdc4.js",
     "runtime-main.js.map": "/collegeasaninvestment/static/js/runtime-main.684dcdc4.js.map",
     "static/css/2.de677ede.chunk.css": "/collegeasaninvestment/static/css/2.de677ede.chunk.css",
-    "static/js/2.3476f9d6.chunk.js": "/collegeasaninvestment/static/js/2.3476f9d6.chunk.js",
-    "static/js/2.3476f9d6.chunk.js.map": "/collegeasaninvestment/static/js/2.3476f9d6.chunk.js.map",
+    "static/js/2.0b1a1ca3.chunk.js": "/collegeasaninvestment/static/js/2.0b1a1ca3.chunk.js",
+    "static/js/2.0b1a1ca3.chunk.js.map": "/collegeasaninvestment/static/js/2.0b1a1ca3.chunk.js.map",
     "index.html": "/collegeasaninvestment/index.html",
-    "precache-manifest.56ac179c9ae97b189be9495bf99fa64f.js": "/collegeasaninvestment/precache-manifest.56ac179c9ae97b189be9495bf99fa64f.js",
+    "precache-manifest.122d1ce675b827f1229085ef9538a71c.js": "/collegeasaninvestment/precache-manifest.122d1ce675b827f1229085ef9538a71c.js",
     "service-worker.js": "/collegeasaninvestment/service-worker.js",
     "static/css/2.de677ede.chunk.css.map": "/collegeasaninvestment/static/css/2.de677ede.chunk.css.map",
-    "static/css/main.d5e0111c.chunk.css.map": "/collegeasaninvestment/static/css/main.d5e0111c.chunk.css.map",
-    "static/js/2.3476f9d6.chunk.js.LICENSE.txt": "/collegeasaninvestment/static/js/2.3476f9d6.chunk.js.LICENSE.txt"
+    "static/css/main.f00eacab.chunk.css.map": "/collegeasaninvestment/static/css/main.f00eacab.chunk.css.map",
+    "static/js/2.0b1a1ca3.chunk.js.LICENSE.txt": "/collegeasaninvestment/static/js/2.0b1a1ca3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.684dcdc4.js",
     "static/css/2.de677ede.chunk.css",
-    "static/js/2.3476f9d6.chunk.js",
-    "static/css/main.d5e0111c.chunk.css",
-    "static/js/main.e22a035a.chunk.js"
+    "static/js/2.0b1a1ca3.chunk.js",
+    "static/css/main.f00eacab.chunk.css",
+    "static/js/main.dfd7cd35.chunk.js"
   ]
 }
