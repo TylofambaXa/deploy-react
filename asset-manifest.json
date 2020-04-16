@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/deploy-react/static/css/main.d5e0111c.chunk.css",
-    "main.js": "/deploy-react/static/js/main.c87b0af2.chunk.js",
-    "main.js.map": "/deploy-react/static/js/main.c87b0af2.chunk.js.map",
-    "runtime-main.js": "/deploy-react/static/js/runtime-main.08203fe5.js",
-    "runtime-main.js.map": "/deploy-react/static/js/runtime-main.08203fe5.js.map",
-    "static/css/2.de677ede.chunk.css": "/deploy-react/static/css/2.de677ede.chunk.css",
-    "static/js/2.3476f9d6.chunk.js": "/deploy-react/static/js/2.3476f9d6.chunk.js",
-    "static/js/2.3476f9d6.chunk.js.map": "/deploy-react/static/js/2.3476f9d6.chunk.js.map",
-    "index.html": "/deploy-react/index.html",
-    "precache-manifest.18201c67416bd5d2e8a9cb250379e4c7.js": "/deploy-react/precache-manifest.18201c67416bd5d2e8a9cb250379e4c7.js",
-    "service-worker.js": "/deploy-react/service-worker.js",
-    "static/css/2.de677ede.chunk.css.map": "/deploy-react/static/css/2.de677ede.chunk.css.map",
-    "static/css/main.d5e0111c.chunk.css.map": "/deploy-react/static/css/main.d5e0111c.chunk.css.map",
-    "static/js/2.3476f9d6.chunk.js.LICENSE.txt": "/deploy-react/static/js/2.3476f9d6.chunk.js.LICENSE.txt"
+    "main.css": "/collegeasaninvestment/static/css/main.d5e0111c.chunk.css",
+    "main.js": "/collegeasaninvestment/static/js/main.e22a035a.chunk.js",
+    "main.js.map": "/collegeasaninvestment/static/js/main.e22a035a.chunk.js.map",
+    "runtime-main.js": "/collegeasaninvestment/static/js/runtime-main.684dcdc4.js",
+    "runtime-main.js.map": "/collegeasaninvestment/static/js/runtime-main.684dcdc4.js.map",
+    "static/css/2.de677ede.chunk.css": "/collegeasaninvestment/static/css/2.de677ede.chunk.css",
+    "static/js/2.3476f9d6.chunk.js": "/collegeasaninvestment/static/js/2.3476f9d6.chunk.js",
+    "static/js/2.3476f9d6.chunk.js.map": "/collegeasaninvestment/static/js/2.3476f9d6.chunk.js.map",
+    "index.html": "/collegeasaninvestment/index.html",
+    "precache-manifest.56ac179c9ae97b189be9495bf99fa64f.js": "/collegeasaninvestment/precache-manifest.56ac179c9ae97b189be9495bf99fa64f.js",
+    "service-worker.js": "/collegeasaninvestment/service-worker.js",
+    "static/css/2.de677ede.chunk.css.map": "/collegeasaninvestment/static/css/2.de677ede.chunk.css.map",
+    "static/css/main.d5e0111c.chunk.css.map": "/collegeasaninvestment/static/css/main.d5e0111c.chunk.css.map",
+    "static/js/2.3476f9d6.chunk.js.LICENSE.txt": "/collegeasaninvestment/static/js/2.3476f9d6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.08203fe5.js",
+    "static/js/runtime-main.684dcdc4.js",
     "static/css/2.de677ede.chunk.css",
     "static/js/2.3476f9d6.chunk.js",
     "static/css/main.d5e0111c.chunk.css",
-    "static/js/main.c87b0af2.chunk.js"
+    "static/js/main.e22a035a.chunk.js"
   ]
 }
