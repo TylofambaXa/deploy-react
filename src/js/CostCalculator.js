@@ -5,7 +5,7 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import Popover from './Popover';
 import NumberFormat from 'react-number-format';
-import { UncontrolledCollapse, Button, CardBody, Card, CardColumns } from 'reactstrap';
+import { UncontrolledCollapse, CardBody, Card, } from 'reactstrap';
 
 
 class CostCalculator extends Component {
@@ -29,26 +29,23 @@ class CostCalculator extends Component {
             rent: 0,
             utilities: 0,
             rentInsurance: 0,
-            anticipatedSalary: 40000
+            anticipatedSalary: 40000,
         }
     }
-    
-    
     render() { 
         var semestersToGraduate = Math.ceil((this.state.creditsNeeded)/this.state.creditsPerSemester);
         var yearsToGraduate = Math.ceil((this.state.creditsNeeded)/(2*this.state.creditsPerSemester));
         var yearTotal = (this.state.tuition 
-                            + this.state.housing 
-                            + this.state.bookCost 
-                            + this.state.food
-                            + this.state.mealPlan
-                            + this.state.gas
-                            + this.state.parking
-                            + this.state.carInsurance
-                            + this.state.rent
-                            + this.state.utilities
-                            + this.state.rentInsurance);
-
+                        + this.state.housing 
+                        + this.state.bookCost 
+                        + this.state.food
+                        + this.state.mealPlan
+                        + this.state.gas
+                        + this.state.parking
+                        + this.state.carInsurance
+                        + this.state.rent
+                        + this.state.utilities
+                        + this.state.rentInsurance);
         var yearRemainingCost = (yearTotal - this.state.scholarships
                                             - this.state.income
                                             - this.state.moneyFromParents
@@ -94,7 +91,7 @@ class CostCalculator extends Component {
                         <Card>
                             <CardBody>
                                 <div className="mt-2">
-                                    <NumberFormat placeholder="Credits for Degree" name="creditsNeeded" thousandSeparator={true} onValueChange={ (values) => {const {value} = values; this.setState({creditsNeeded: value})}}/>
+                                    <NumberFormat placeholder="Credits for Degree" name="creditsNeeded" thousandSeparator={true} onValueChange={ (values) => {const {value} = values; this.setState({creditsNeeded: value});  this.props.credits(parseFloat(value));}}/>
                                     <FontAwesomeIcon id="creditsNeeded" className="ml-2" icon={faQuestionCircle} size="1x" />
                                     <Popover 
                                         id="creditsNeeded" 
@@ -110,7 +107,7 @@ class CostCalculator extends Component {
                                     />    
                                 </div>
                                 <div className="mt-2">
-                                    <NumberFormat placeholder="Credits Per Semester" name="creditsPerSemester" thousandSeparator={true} onValueChange={ (values) => {const {value} = values; this.setState({creditsPerSemester: value})}}/>
+                                    <NumberFormat placeholder="Credits Per Semester" name="creditsPerSemester" thousandSeparator={true} onValueChange={ (values) => {const {value} = values; this.setState({creditsPerSemester: value}); this.props.creditsPerSem(parseFloat(value));}}/>
                                     <FontAwesomeIcon id="creditsPerSemester" className="ml-2" icon={faQuestionCircle} size="1x" />
                                     <Popover 
                                         id="creditsPerSemester" 
@@ -143,7 +140,7 @@ class CostCalculator extends Component {
                         <Card>
                             <CardBody>
                                 <div className="mt-2">
-                                    <NumberFormat placeholder="Tuition/Fees" name="tuition" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({tuition: parseFloat(value)})}}/>
+                                    <NumberFormat placeholder="Tuition/Fees" name="tuition" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({tuition: parseFloat(value)}); this.props.tuition(parseFloat(value));} }/>
                                     <FontAwesomeIcon id="tuition" className="ml-2" icon={faQuestionCircle} size="1x" />
                                     <Popover 
                                         id="tuition" 
@@ -158,7 +155,7 @@ class CostCalculator extends Component {
                                 </div>
 
                                 <div className="mt-2">
-                                    <NumberFormat placeholder="Books/Supplies" name="bookCost" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({bookCost: parseFloat(value)})}}/>
+                                    <NumberFormat placeholder="Books/Supplies" name="bookCost" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({bookCost: parseFloat(value)}); this.props.bookCost(parseFloat(value));}}/>
                                     <FontAwesomeIcon id="bookCost" className="ml-2" icon={faQuestionCircle} size="1x" />
                                     <Popover 
                                         id="bookCost" 
@@ -186,7 +183,7 @@ class CostCalculator extends Component {
                         <Card>
                             <CardBody>
                                 <div className="mt-2">
-                                    <NumberFormat placeholder="Housing Cost" name="housing" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({housing: parseFloat(value)})}}/>
+                                    <NumberFormat placeholder="Housing Cost" name="housing" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({housing: parseFloat(value)}); this.props.housing(parseFloat(value));}}/>
                                     <FontAwesomeIcon id="housing" className="ml-2" icon={faQuestionCircle} size="1x" />
                                     <Popover 
                                         id="housing" 
@@ -201,7 +198,7 @@ class CostCalculator extends Component {
                                     /> 
                                 </div>
                                 <div className="mt-2">
-                                    <NumberFormat placeholder="Meal Plan" name="mealPlan" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({mealPlan: parseFloat(value)})}}/>
+                                    <NumberFormat placeholder="Meal Plan" name="mealPlan" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({mealPlan: parseFloat(value)}); this.props.mealPlan(parseFloat(value));}}/>
                                     <FontAwesomeIcon id="mealPlan" className="ml-2" icon={faQuestionCircle} size="1x" />
                                     <Popover 
                                         id="mealPlan" 
@@ -228,7 +225,7 @@ class CostCalculator extends Component {
                         <Card>
                             <CardBody>
                                 <div className="mt-2">
-                                    <NumberFormat placeholder="Rent" name="rent" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({rent: parseFloat(value)})}}/>
+                                    <NumberFormat placeholder="Rent" name="rent" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({rent: parseFloat(value)}); this.props.rent(parseFloat(value));}}/>
                                     <FontAwesomeIcon id="rent" className="ml-2" icon={faQuestionCircle} size="1x" />
                                     <Popover 
                                         id="rent" 
@@ -240,7 +237,7 @@ class CostCalculator extends Component {
                                     /> 
                                 </div>
                                 <div className="mt-2">
-                                    <NumberFormat placeholder="Utilities" name="utilities" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({utilities: parseFloat(value)})}}/>
+                                    <NumberFormat placeholder="Utilities" name="utilities" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({utilities: parseFloat(value)}); this.props.utilities(parseFloat(value));}}/>
                                     <FontAwesomeIcon id="utilities" className="ml-2" icon={faQuestionCircle} size="1x" />
                                     <Popover 
                                         id="utilities" 
@@ -250,7 +247,7 @@ class CostCalculator extends Component {
                                     /> 
                                 </div>
                                 <div className="mt-2">
-                                    <NumberFormat placeholder="Renter Insurance" name="rentInsurance" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({rentInsurance: parseFloat(value)})}}/>
+                                    <NumberFormat placeholder="Renter Insurance" name="rentInsurance" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({rentInsurance: parseFloat(value)}); this.props.rentInsurance(parseFloat(value));}}/>
                                     <FontAwesomeIcon id="rentInsurance" className="ml-2" icon={faQuestionCircle} size="1x" />
                                     <Popover 
                                         id="rentInsurance" 
@@ -259,7 +256,7 @@ class CostCalculator extends Component {
                                     /> 
                                 </div>
                                 <div className="mt-2">
-                                    <NumberFormat placeholder="Food" name="food" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({food: parseFloat(value)})}}/>
+                                    <NumberFormat placeholder="Food" name="food" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({food: parseFloat(value)}); this.props.food(parseFloat(value));}}/>
                                     <FontAwesomeIcon id="food" className="ml-2" icon={faQuestionCircle} size="1x" />
                                     <Popover 
                                         id="food" 
@@ -286,7 +283,7 @@ class CostCalculator extends Component {
                         <Card>
                             <CardBody>
                                 <div className="mt-2">
-                                    <NumberFormat placeholder="Gas or Bus Fair" name="gas" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({gas: parseFloat(value)})}}/>
+                                    <NumberFormat placeholder="Gas or Bus Fair" name="gas" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({gas: parseFloat(value)}); this.props.gas(parseFloat(value));}}/>
                                     <FontAwesomeIcon id="gas" className="ml-2" icon={faQuestionCircle} size="1x" />
                                     <Popover 
                                         id="gas" 
@@ -297,7 +294,7 @@ class CostCalculator extends Component {
                                     /> 
                                 </div>
                                 <div className="mt-2">
-                                    <NumberFormat placeholder="Parking" name="parking" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({parking: parseFloat(value)})}}/>
+                                    <NumberFormat placeholder="Parking" name="parking" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({parking: parseFloat(value)}); this.props.parking(parseFloat(value));}}/>
                                     <FontAwesomeIcon id="parking" className="ml-2" icon={faQuestionCircle} size="1x" />
                                     <Popover 
                                         id="parking" 
@@ -308,7 +305,7 @@ class CostCalculator extends Component {
                                     /> 
                                 </div>
                                 <div className="mt-2">
-                                    <NumberFormat placeholder="Car Insurance" name="carInsurance" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({carInsurance: parseFloat(value)})}}/>
+                                    <NumberFormat placeholder="Car Insurance" name="carInsurance" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({carInsurance: parseFloat(value)}); this.props.carInsurance(parseFloat(value));}}/>
                                     <FontAwesomeIcon id="carInsurance" className="ml-2" icon={faQuestionCircle} size="1x" />
                                     <Popover 
                                         id="carInsurance" 
@@ -333,7 +330,7 @@ class CostCalculator extends Component {
                         <Card>
                             <CardBody>
                                 <div className="mt-2">
-                                    <NumberFormat placeholder="Scholarships" name="scholarships" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({scholarships: parseFloat(value)})}}/>
+                                    <NumberFormat placeholder="Scholarships" name="scholarships" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({scholarships: parseFloat(value)}); this.props.scholarships(parseFloat(value));}}/>
                                     <FontAwesomeIcon id="scholarships" className="ml-2" icon={faQuestionCircle} size="1x" />
                                     <Popover 
                                         id="scholarships" 
@@ -342,7 +339,7 @@ class CostCalculator extends Component {
                                     /> 
                                 </div>
                                 <div className="mt-2">
-                                    <NumberFormat placeholder="Income" name="income" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({income: parseFloat(value)})}}/>
+                                    <NumberFormat placeholder="Income" name="income" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({income: parseFloat(value)}); this.props.income(parseFloat(value));}}/>
                                     <FontAwesomeIcon id="income" className="ml-2" icon={faQuestionCircle} size="1x" />
                                     <Popover 
                                         id="income" 
@@ -351,7 +348,7 @@ class CostCalculator extends Component {
                                     /> 
                                 </div>
                                 <div className="mt-2">
-                                    <NumberFormat placeholder="Money from Parents" name="moneyFromParents" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({moneyFromParents: parseFloat(value)})}}/>
+                                    <NumberFormat placeholder="Money from Parents" name="moneyFromParents" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({moneyFromParents: parseFloat(value)}); this.props.moneyFromParents(parseFloat(value));}}/>
                                     <FontAwesomeIcon id="moneyFromParents" className="ml-2" icon={faQuestionCircle} size="1x" />
                                     <Popover 
                                         id="moneyFromParents" 
@@ -360,7 +357,7 @@ class CostCalculator extends Component {
                                     /> 
                                 </div>
                                 <div className="mt-2">
-                                    <NumberFormat placeholder="Loans" name="Loans" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({loans: parseFloat(value)})}}/>
+                                    <NumberFormat placeholder="Loans" name="Loans" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({loans: parseFloat(value)}); this.props.loans(parseFloat(value));}}/>
                                     <FontAwesomeIcon id="Loans" className="ml-2" icon={faQuestionCircle} size="1x" />
                                     <Popover 
                                         id="Loans" 
@@ -388,7 +385,7 @@ class CostCalculator extends Component {
                         <Card>
                             <CardBody>
                                 <div className="mt-2">
-                                    <NumberFormat placeholder="Anticipated Salary" name="anticipatedSalary" value={this.state.anticipatedSalary} thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({anticipatedSalary: parseFloat(value)})}}/>
+                                    <NumberFormat placeholder="Anticipated Salary" name="anticipatedSalary" value={this.state.anticipatedSalary} thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({anticipatedSalary: parseFloat(value)}); this.props.anticipatedSalary(parseFloat(value));}}/>
                                     <FontAwesomeIcon id="anticipatedSalary" className="ml-2" icon={faQuestionCircle} size="1x" />
                                     <Popover 
                                         id="anticipatedSalary" 
@@ -413,7 +410,9 @@ class CostCalculator extends Component {
     handleInputChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
-        })
+        });
+
+
     }
 }
  

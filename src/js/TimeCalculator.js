@@ -21,6 +21,20 @@ const classHours = {
     100: '15'
   };
 
+  const studyHours = {
+    0: '0',
+    10: '1',
+    20: '2',
+    30: '3',
+    40: '4',
+    50: '5',
+    60: '6',
+    70: '7',
+    80: '8',
+    90: '9',
+    100: '10'
+  };
+
   const workHours = {
     0: '0',
     10: '4',
@@ -63,14 +77,14 @@ class TimeCalculator extends Component {
     constructor(props){
         super(props)
         this.state = { 
-            classHours: 280,
-            sleepHours: 560, 
-            studyHours: 210, 
+            classHours: 120,
+            sleepHours: 560,
+            studyHours: 250,
             workHours: 120,
             eatHours: 140,
-            commuteHours: 70, 
-            prepTime: 70,
-            selfTime: 70
+            commuteHours: 50,
+            selfTime: 70,
+            prepTime: 70
         }
     }
     render() { 
@@ -96,22 +110,22 @@ class TimeCalculator extends Component {
                                         body="How many hours in class will you spend per week?"
                                     />  
                         </h6>
-                        <Slider marks={classHours} step={10} defaultValue={80} name="classHours" onChange={this.handleClassChange}/>
+                        <Slider marks={classHours} step={10} defaultValue={70} name="classHours" onChange={this.handleClassChange}/>
 
                     </div>
                     <br/>
                     <div id="studyHourDiv">
-                        <h6>Hours studying per day:
+                        <h6>Hours studying per weekday:
                         <FontAwesomeIcon id="classHours" className="ml-2" icon={faQuestionCircle} size="1x" />
                         <Popover 
                                         id="classHours" 
-                                        title="Hours In Class" 
+                                        title="Hours Studying" 
                                         body="A general rule is that you should spend 2 hours studying, reading, 
                                         writing and working on projects outside of each hour spent in class. 
                                         That would mean 6 hours of time outside of class for the typical 3 credit class."
                                     />  
                         </h6>
-                        <Slider marks={classHours} step={10} defaultValue={40} name="studyHours" onChange={this.handleStudyChange}/>
+                        <Slider marks={studyHours} step={10} defaultValue={50} name="studyHours" onChange={this.handleStudyChange}/>
                     </div>
                     <br/>
                     <div id="sleepHourDiv">
@@ -195,13 +209,15 @@ class TimeCalculator extends Component {
     handleClassChange = (value) => {
         this.setState({
             classHours: value
-        })
+        });
+        this.props.classHours(parseFloat(value));
     }
 
     handleStudyChange = (value) => {
         this.setState({
             studyHours: value*5
-        })
+        });
+        this.props.studyHours(parseFloat(value*5));
     }
 
     handleSleepChange = (value) => {
@@ -218,7 +234,8 @@ class TimeCalculator extends Component {
         }
         this.setState({
             sleepHours: retVal*7
-        })
+        });
+        this.props.sleepHours(parseFloat(retVal*7));
     }
 
     handleWorkChange = (value) => {
@@ -241,7 +258,8 @@ class TimeCalculator extends Component {
         }
         this.setState({
             workHours: retVal
-        })
+        });
+        this.props.workHours(parseFloat(retVal));
     }
 
     handleEatChange = (value) => {
@@ -257,7 +275,8 @@ class TimeCalculator extends Component {
         }
         this.setState({
             eatHours: retVal*7
-        })
+        });
+        this.props.eatHours(parseFloat(retVal*7));
     }
 
     handleCommuteChange = (value) => {
@@ -274,7 +293,8 @@ class TimeCalculator extends Component {
         }
         this.setState({
             commuteHours: retVal*5
-        })
+        });
+        this.props.commuteHours(parseFloat(retVal*5));
     }
     handlePrepChange = (value) => {
         var retVal = 0;
@@ -289,7 +309,8 @@ class TimeCalculator extends Component {
         }
         this.setState({
             prepTime: retVal*7
-        })
+        });
+        this.props.prepTime(parseFloat(retVal*7));
     }
     handleSelfChange = (value) => {
         var retVal = 0;
@@ -304,7 +325,8 @@ class TimeCalculator extends Component {
         }
         this.setState({
             selfTime: retVal*7
-        })
+        });
+        this.props.selfTime(parseFloat(retVal*7));
     }
 
 }
