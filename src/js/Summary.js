@@ -18,8 +18,8 @@ class Summary extends Component {
                     <h5 className="card-title">Summary</h5>
                     <div className="font-weight-bold">Years to Graduate: {isNaN(this.props.semToGrad) ? "" : this.props.semToGrad} </div>
                     <div className="font-weight-bold">Total Year Cost: <NumberFormat value={this.props.yearTotal} displayType={'text'} thousandSeparator={true} prefix={'$'}/></div>
-                    <div className="font-weight-bold">Need funding for: <NumberFormat value={this.props.yearRemainingCost} displayType={'text'} thousandSeparator={true} prefix={'$'}/></div>
-                    <div className="font-weight-bold">Free Time in a Week: {this.props.remainingHours}</div>
+                    <div className="font-weight-bold" >Need funding for: <NumberFormat value={this.props.yearRemainingCost} displayType={'text'} thousandSeparator={true} prefix={'$'}/></div>
+                    <div className={this.props.remainingHours <= 0 ? "font-weight-bold red" : "font-weight-bold"}>Free Time in a Week: {this.props.remainingHours}</div>
 
                     <h4>Helpful tips: </h4>
                     <div className={this.props.sleepHours < 42 ? "" : "hidden"}>

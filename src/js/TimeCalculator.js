@@ -60,8 +60,8 @@ const sleepHours = {
 
   const eatHours = {
     0: '1',
-    33: '2',
-    66: '3',
+    33.33333333333334: '2',
+    66.66666666666667: '3',
     100: '4'
   };
 
@@ -99,7 +99,7 @@ class TimeCalculator extends Component {
         return ( 
             <div className="card">
                 <div className="card-body">
-                <h5 id="totalHours" className="cardTitle">Weekly Hours Left: {168- totalHours}</h5>
+                <h5 id="totalHours" className={168- totalHours <= 0 ? "cardTitle red" : "cardTitle"}>Weekly Hours Left: {168- totalHours}</h5>
                     <p className="card-text">Use this calculator to organize your time!</p>
                     <div id="classHourDiv">
                         <h6>Hours in class per week:
@@ -115,7 +115,7 @@ class TimeCalculator extends Component {
                     </div>
                     <br/>
                     <div id="studyHourDiv">
-                        <h6>Hours studying per weekday:
+                        <h6 className={this.state.studyHours/10 <= 10 ? "red" : ""}>Hours studying per weekday:
                         <FontAwesomeIcon id="classHours" className="ml-2" icon={faQuestionCircle} size="1x" />
                         <Popover 
                                         id="classHours" 
@@ -129,7 +129,7 @@ class TimeCalculator extends Component {
                     </div>
                     <br/>
                     <div id="sleepHourDiv">
-                        <h6>Hours sleeping per day:
+                        <h6 className={this.state.sleepHours/10 <= 42 ? "red" : ""}>Hours sleeping per day:
                         <FontAwesomeIcon id="sleepHours" className="ml-2" icon={faQuestionCircle} size="1x" />
                         <Popover 
                                         id="sleepHours" 
@@ -153,7 +153,7 @@ class TimeCalculator extends Component {
                     </div>
                     <br/>
                     <div id="eatHourDiv">
-                        <h6>Hours eating per day:
+                        <h6 className={this.state.eatHours/10 <= 7 ? "red" : ""}>Hours eating per day:
                         <FontAwesomeIcon id="eatHours" className="ml-2" icon={faQuestionCircle} size="1x" />
                         <Popover 
                                         id="eatHours" 
@@ -161,7 +161,7 @@ class TimeCalculator extends Component {
                                         body="How many hours eating/making food will you spend per day?"
                                     />  
                         </h6>
-                        <Slider marks={eatHours} step={33} defaultValue={33} name="eatHours" onChange={this.handleEatChange}/>
+                        <Slider marks={eatHours} step={100/3} defaultValue={100/3} name="eatHours" onChange={this.handleEatChange}/>
                     </div>
                     <br/>
                     <div id="commuteHourDiv">
@@ -177,7 +177,7 @@ class TimeCalculator extends Component {
                     </div>
                     <br/>
                     <div id="prepHourDiv">
-                        <h6>Hours getting ready per day:
+                        <h6 className={this.state.prepTime/10 < 7 ? "red" : ""}>Hours getting ready per day:
                         <FontAwesomeIcon id="prepHours" className="ml-2" icon={faQuestionCircle} size="1x" />
                         <Popover 
                                         id="prepHours" 
@@ -185,11 +185,11 @@ class TimeCalculator extends Component {
                                         body="How many hours getting ready will you spend per day?"
                                     />  
                         </h6>
-                        <Slider marks={eatHours} step={33} defaultValue={0} name="prepHours" onChange={this.handlePrepChange}/>
+                        <Slider marks={commuteHours} step={25} defaultValue={25} name="prepHours" onChange={this.handlePrepChange}/>
                     </div>
                     <br/>
                     <div id="selfHourDiv">
-                        <h6>Hours for self care per day:
+                        <h6 className={this.state.selfTime/10 < 7 ? "red" : ""}>Hours for self care per day:
                         <FontAwesomeIcon id="selfHours" className="ml-2" icon={faQuestionCircle} size="1x" />
                         <Popover 
                                         id="selfHours" 
@@ -197,7 +197,7 @@ class TimeCalculator extends Component {
                                         body="How many hours of self care will you need per day?"
                                     />  
                         </h6>
-                        <Slider marks={eatHours} step={33} defaultValue={0} name="selfHours" onChange={this.handleSelfChange}/>
+                        <Slider marks={commuteHours} step={25} defaultValue={25} name="selfHours" onChange={this.handleSelfChange}/>
                     </div>
                     <br/>
 
@@ -267,11 +267,11 @@ class TimeCalculator extends Component {
         switch (value)
         {
             case 0: retVal = 10; break;
-            case 33: retVal = 20; break;
-            case 66: retVal = 30; break;
+            case 33.33333333333334: retVal = 20; break;
+            case 33.333333333333336: retVal = 20; break;
+            case 66.66666666666667: retVal = 30; break;
             case 100: retVal = 40; break;
             default: break;
-
         }
         this.setState({
             eatHours: retVal*7
@@ -300,9 +300,10 @@ class TimeCalculator extends Component {
         var retVal = 0;
         switch (value)
         {
-            case 0: retVal = 10; break;
-            case 33: retVal = 20; break;
-            case 66: retVal = 30; break;
+            case 0: retVal = 0; break;
+            case 25: retVal = 10; break;
+            case 50: retVal = 20; break;
+            case 75: retVal = 30; break;
             case 100: retVal = 40; break;
             default: break;
 
@@ -316,9 +317,10 @@ class TimeCalculator extends Component {
         var retVal = 0;
         switch (value)
         {
-            case 0: retVal = 10; break;
-            case 33: retVal = 20; break;
-            case 66: retVal = 30; break;
+            case 0: retVal = 0; break;
+            case 25: retVal = 10; break;
+            case 50: retVal = 20; break;
+            case 75: retVal = 30; break;
             case 100: retVal = 40; break;
             default: break;
 
