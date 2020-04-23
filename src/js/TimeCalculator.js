@@ -22,17 +22,17 @@ const classHours = {
   };
 
   const studyHours = {
-    0: '0',
-    10: '1',
-    20: '2',
-    30: '3',
-    40: '4',
-    50: '5',
-    60: '6',
-    70: '7',
-    80: '8',
-    90: '9',
-    100: '10'
+    0: '5',
+    10: '10',
+    20: '15',
+    30: '20',
+    40: '25',
+    50: '30',
+    60: '35',
+    70: '40',
+    80: '45',
+    90: '50',
+    100: '55'
   };
 
   const workHours = {
@@ -99,8 +99,13 @@ class TimeCalculator extends Component {
         return ( 
             <div className="card">
                 <div className="card-body">
-                <h5 id="totalHours" className={168- totalHours <= 0 ? "cardTitle red" : "cardTitle"}>Weekly Hours Left: {168- totalHours}</h5>
-                    <p className="card-text">Use this calculator to organize your time!</p>
+                    <p className="card-text mb-5">
+                    There are 168 hours in a week for you to invest as you see fit. Use this calculator to see how balancing your academics, 
+                    life, work and family will impact your schedule. You can adjust each slider as much as you like. The summary at the top 
+                    will alert you when you run out of time. However over each question mark for tips and suggestions. When you are done we 
+                    provide a summary at the bottom with suggestions.
+                    </p>
+                    <h5 id="totalHours" className={168- totalHours <= 0 ? "cardTitle red mb-4" : "cardTitle mb-4"}>Weekly Hours Left: {168- totalHours}</h5>
                     <div id="classHourDiv">
                         <h6>Hours in class per week:
                         <FontAwesomeIcon id="classHours" className="ml-2" icon={faQuestionCircle} size="1x" />
@@ -115,10 +120,10 @@ class TimeCalculator extends Component {
                     </div>
                     <br/>
                     <div id="studyHourDiv">
-                        <h6 className={this.state.studyHours/10 <= 10 ? "red" : ""}>Hours studying per weekday:
-                        <FontAwesomeIcon id="classHours" className="ml-2" icon={faQuestionCircle} size="1x" />
+                        <h6 className={this.state.studyHours/10 <= 10 ? "red" : ""}>Hours studying per week:
+                        <FontAwesomeIcon id="studyHours" className="ml-2" icon={faQuestionCircle} size="1x" />
                         <Popover 
-                                        id="classHours" 
+                                        id="studyHours" 
                                         title="Hours Studying" 
                                         body="A general rule is that you should spend 2 hours studying, reading, 
                                         writing and working on projects outside of each hour spent in class. 
@@ -215,9 +220,9 @@ class TimeCalculator extends Component {
 
     handleStudyChange = (value) => {
         this.setState({
-            studyHours: value*5
+            studyHours: value
         });
-        this.props.studyHours(parseFloat(value*5));
+        this.props.studyHours(parseFloat(value));
     }
 
     handleSleepChange = (value) => {

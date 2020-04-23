@@ -16,10 +16,24 @@ class Summary extends Component {
             <div className="card">
                 <div className="card-body">
                     <h5 className="card-title">Summary</h5>
-                    <div className="font-weight-bold">Years to Graduate: {isNaN(this.props.semToGrad) ? "" : this.props.semToGrad} </div>
-                    <div className="font-weight-bold">Total Year Cost: <NumberFormat value={this.props.yearTotal} displayType={'text'} thousandSeparator={true} prefix={'$'}/></div>
-                    <div className="font-weight-bold" >Need funding for: <NumberFormat value={this.props.yearRemainingCost} displayType={'text'} thousandSeparator={true} prefix={'$'}/></div>
-                    <div className={this.props.remainingHours <= 0 ? "font-weight-bold red" : "font-weight-bold"}>Free Time in a Week: {this.props.remainingHours}</div>
+                    <table className="font-weight-bold" align="center">
+                        <tr>
+                            <td className="pr-3" align="right">Years to Graduate:</td>
+                            <td>{isNaN(this.props.semToGrad) ? "" : this.props.semToGrad}</td>
+                        </tr>
+                        <tr>
+                            <td className="pr-3" align="right">Total Year Cost:</td>
+                            <td><NumberFormat value={this.props.yearTotal} displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
+                        </tr>
+                        <tr>
+                            <td className="pr-3" align="right">Need funding for:</td>
+                            <td><NumberFormat value={this.props.yearRemainingCost} displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
+                        </tr>
+                        <tr>
+                            <td className={this.props.remainingHours <= 0 ? "red pr-3" : "pr-3"} align="right">Free Time in a Week:</td>
+                            <td>{this.props.remainingHours}</td>
+                        </tr>
+                    </table>
 
                     <h4>Helpful tips: </h4>
                     <div className={this.props.sleepHours < 42 ? "" : "hidden"}>

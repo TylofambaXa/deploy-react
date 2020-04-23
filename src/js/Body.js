@@ -137,7 +137,7 @@ class Body extends Component {
         return (
         <div className="container pt-4 pb-4">
             <div className="row">
-                <div className="col-6">
+                <div className="col-md-6 mt-3">
                     <CostCalculator callbackFromParent={this.costInfo} 
                     yearTotal={this.yearTotal} 
                     credits={this.credits}
@@ -159,7 +159,7 @@ class Body extends Component {
                     loans={this.loans}
                     anticipatedSalary={this.anticipatedSalary}/>
                 </div>
-                <div className="col-6">
+                <div className="col-md-6 mt-3">
                     <TimeCalculator callbackFromParent={this.timeInfo}
                                         classHours={this.classHours}
                                         sleepHours={this.sleepHours}
@@ -172,7 +172,7 @@ class Body extends Component {
                 </div>
             </div>
             <div className="row">
-                <div className="col-12">
+                <div className="col-12 mt-5">
                     <Summary costInfo={this.state.costInfo} 
                     timeInfo={this.state.timeInfo} 
                     yearTotal={this.state.yearTotal}

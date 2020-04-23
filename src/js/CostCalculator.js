@@ -5,7 +5,7 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import Popover from './Popover';
 import NumberFormat from 'react-number-format';
-import { UncontrolledCollapse, CardBody, Card, } from 'reactstrap';
+import { UncontrolledCollapse, CardBody, Card, Table } from 'reactstrap';
 
 
 class CostCalculator extends Component {
@@ -70,12 +70,29 @@ class CostCalculator extends Component {
         return ( 
             <div className="card">
                 <div className="card-body">
-                    <h5 className="card-title">Overview</h5>
+                    <div className="card-title mb-4">
+                    Welcome to the College Investment Calculator. This calculator is designed to help you and 
+                    your family examine how to get the best return on your investment for your time and money. 
+                    You can enter the amounts in each box by clicking on the headings and watch how it changes 
+                    your totals at the top. You can keep changing and revising as many times as you want. Each 
+                    question mark to the right of the box gives you some hints and tips.
+                    </div>
                     <Card>
                         <CardBody>
-                            <div className="font-weight-bold">Years to Graduate: <NumberFormat value={yearsToGraduate} displayType={'text'} thousandSeparator={true}/></div>
-                            <div className="font-weight-bold">Total Year Cost: <NumberFormat value={yearTotal} displayType={'text'} thousandSeparator={true} prefix={'$'} /></div>
-                            <div className="font-weight-bold">Expenses left: <NumberFormat value={yearRemainingCost} displayType={'text'} thousandSeparator={true} prefix={'$'} /></div>
+                            <table align="center">
+                                <tr>
+                                    <td className="font-weight-bold pr-3" align="right">Years to Graduate:</td>
+                                    <td><NumberFormat value={yearsToGraduate} displayType={'text'} thousandSeparator={true}/></td>
+                                </tr>
+                                <tr>
+                                    <td className="font-weight-bold pr-3" align="right">Total Year Cost:</td>
+                                    <td><NumberFormat value={yearTotal} displayType={'text'} thousandSeparator={true} prefix={'$'} /></td>
+                                </tr>
+                                <tr>
+                                    <td className="font-weight-bold pr-3" align="right">Expenses left:</td>
+                                    <td><NumberFormat value={yearRemainingCost} displayType={'text'} thousandSeparator={true} prefix={'$'} /></td>
+                                </tr>
+                            </table>
                         </CardBody>
                     </Card>
 
