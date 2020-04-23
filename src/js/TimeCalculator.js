@@ -105,6 +105,7 @@ class TimeCalculator extends Component {
                     will alert you when you run out of time. However over each question mark for tips and suggestions. When you are done we 
                     provide a summary at the bottom with suggestions.
                     </p>
+                    <h6>1 Week = 168 Hours</h6>
                     <h5 id="totalHours" className={168- totalHours <= 0 ? "cardTitle red mb-4" : "cardTitle mb-4"}>Weekly Hours Left: {168- totalHours}</h5>
                     <div id="classHourDiv">
                         <h6>Hours in class per week:

@@ -194,7 +194,7 @@ class CostCalculator extends Component {
 
                     <div>
                         <div  className="card-header font-weight-bold mt-3" id="toggler5">
-                        Living on campus?
+                        Living on campus
                         </div>
                         <UncontrolledCollapse toggler="#toggler5">
                         <Card>
@@ -236,7 +236,7 @@ class CostCalculator extends Component {
 
                     <div>
                         <div  className="card-header font-weight-bold mt-3" id="toggler6">
-                        Living off campus?
+                        Living off campus
                         </div>
                         <UncontrolledCollapse toggler="#toggler6">
                         <Card>
@@ -396,7 +396,7 @@ class CostCalculator extends Component {
 
                     <div>
                         <div  className="card-header font-weight-bold mt-3" id="toggler7">
-                        After college
+                        Anticipated Salary After Graduation
                         </div>
                         <UncontrolledCollapse toggler="#toggler7">
                         <Card>
