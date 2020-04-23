@@ -131,7 +131,7 @@ class TimeCalculator extends Component {
                                         That would mean 6 hours of time outside of class for the typical 3 credit class."
                                     />  
                         </h6>
-                        <Slider marks={studyHours} step={10} defaultValue={50} name="studyHours" onChange={this.handleStudyChange}/>
+                        <Slider marks={studyHours} step={10} defaultValue={40} name="studyHours" onChange={this.handleStudyChange}/>
                     </div>
                     <br/>
                     <div id="sleepHourDiv">
@@ -213,17 +213,51 @@ class TimeCalculator extends Component {
     }
 
     handleClassChange = (value) => {
+        var retVal = 0;
+        switch (value)
+        {
+            case 0: retVal = 50; break;
+            case 10: retVal = 60; break;
+            case 20: retVal = 70; break;
+            case 30: retVal = 80; break;
+            case 40: retVal = 90; break;
+            case 50: retVal = 100; break;
+            case 60: retVal = 110; break;
+            case 70: retVal = 120; break;
+            case 80: retVal = 130; break;
+            case 90: retVal = 140; break;
+            case 100: retVal = 150; break;
+            default: break;
+
+        }
         this.setState({
-            classHours: value
+            classHours: retVal
         });
-        this.props.classHours(parseFloat(value));
+        this.props.classHours(parseFloat(retVal));
     }
 
     handleStudyChange = (value) => {
+        var retVal = 0;
+        switch (value)
+        {
+            case 0: retVal = 50; break;
+            case 10: retVal = 100; break;
+            case 20: retVal = 150; break;
+            case 30: retVal = 200; break;
+            case 40: retVal = 250; break;
+            case 50: retVal = 300; break;
+            case 60: retVal = 350; break;
+            case 70: retVal = 400; break;
+            case 80: retVal = 450; break;
+            case 90: retVal = 500; break;
+            case 100: retVal = 550; break;
+            default: break;
+
+        }
         this.setState({
-            studyHours: value
+            studyHours: retVal
         });
-        this.props.studyHours(parseFloat(value));
+        this.props.studyHours(parseFloat(retVal));
     }
 
     handleSleepChange = (value) => {
