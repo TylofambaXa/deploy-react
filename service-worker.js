@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/college-as-an-investment/precache-manifest.95941ff7565939f3e407e22c5ec521b0.js"
+  "/college-as-an-investment/precache-manifest.d0a4dc8d9310868122aab53985b6fd86.js"
 );
 
 self.addEventListener('message', (event) => {
