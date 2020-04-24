@@ -4,8 +4,8 @@
 Luke Jones
 
 ### Original Developers
-Jake Andrews
-Shrelina Timilsina
+Jake Andrews,
+Shrelina Timilsina,
 Tyler Mathern
 
 
