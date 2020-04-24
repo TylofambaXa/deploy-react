@@ -1,3 +1,38 @@
+# College as an Investment
+
+### Owner
+Luke Jones
+
+### Original Developers
+Jake Andrews
+Shrelina Timilsina
+Tyler Mathern
+
+
+## Information
+College as an Investment is a single page React web application that calculates both the cost
+and time associated with going to college. The goal is to help prospective students and their
+families examine how to get the best return on investing both time and money into college.
+
+This application is currently being hosted for free at https://lukejones55.github.io/college-as-an-investment
+
+## Developer information
+This application was created in React JS using Create React App.
+
+### Prerequisites
+Download Node JS along with npm. Npm is how all of the packages are managed for this project.
+
+### Steps for development
+1. Clone this repo
+2. Run `npm update` from the project directory. This should install all depenencies.
+3. Run `npm start` to run a local instance of the site
+4. Run `npm run deploy` to publish changes to the GitHub io page
+
+All project dependencies can be found in `package.json`
+
+
+# Information about Create React App
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

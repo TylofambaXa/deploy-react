@@ -82,15 +82,15 @@ class CostCalculator extends Component {
                             <table align="center">
                                 <tr>
                                     <td className="font-weight-bold pr-3" align="right">Years to Graduate:</td>
-                                    <td><NumberFormat value={yearsToGraduate} displayType={'text'} thousandSeparator={true}/></td>
+                                    <td align="left"><NumberFormat value={yearsToGraduate} displayType={'text'} thousandSeparator={true}/></td>
                                 </tr>
                                 <tr>
-                                    <td className="font-weight-bold pr-3" align="right">Total Year Cost:</td>
-                                    <td><NumberFormat value={yearTotal} displayType={'text'} thousandSeparator={true} prefix={'$'} /></td>
+                                    <td className="font-weight-bold pr-3" align="right">One Year Cost:</td>
+                                    <td align="left"><NumberFormat value={yearTotal} displayType={'text'} thousandSeparator={true} prefix={'$'} /></td>
                                 </tr>
                                 <tr>
                                     <td className="font-weight-bold pr-3" align="right">Expenses left:</td>
-                                    <td><NumberFormat value={yearRemainingCost} displayType={'text'} thousandSeparator={true} prefix={'$'} /></td>
+                                    <td align="left"><NumberFormat value={yearRemainingCost} displayType={'text'} thousandSeparator={true} prefix={'$'} /></td>
                                 </tr>
                             </table>
                         </CardBody>
@@ -113,14 +113,8 @@ class CostCalculator extends Component {
                                     <Popover 
                                         id="creditsNeeded" 
                                         title="Credits Needed for Degree" 
-                                        body="Enter the credits you plan on taking your first semester. 
-                                        Credits are the measure of time in classroom. Most courses are 3 credits or 4 if they include a lab. 
-                                        12 credits is the minimum needed to be considered 'full-time' for federal financial aid. 
-                                        However, Students planning on graduating in four years need to take 15 credits each semester 
-                                        or 30 credits per academic year between fall, spring, summer to earn 120 credits required for most degrees. 
-                                        Keep in mind that a general rule is for each credit (hour in class) you need to set aside 
-                                        2 hours for study and to work on writing, assignments, projects, group work, etc. 
-                                        Taking 15 credits would mean 30 hours of study time in a given week."
+                                        body="Enter the total number of credits that you will need to complete 
+                                        to earn your degree. A bachelor's degree typically requires 120 credits."
                                     />    
                                 </div>
                                 <div className="mt-2">
@@ -206,11 +200,8 @@ class CostCalculator extends Component {
                                         id="housing" 
                                         title="Housing Cost" 
                                         body="Enter the cost of on-campus housing and dining for the year. 
-                                        Enter 0 if you do not plan to live on campus. Living and eating on campus 
-                                        can save time that you can then invest in your academics. 
-                                        Housing costs come with the requirment to purchase a meal plan.
-                                         However, there are different prices at different dorms and different options and prices for meal plans. 
-                                        Take a look at each to get a better look at what your costs could be."
+                                        Enter 0 if you do not plan to live on campus. Living on campus 
+                                        can save time that you can then invest in your academics."
                                         link="https://www.boisestate.edu/housing/housing-rates/residence-hall-rates/"
                                     /> 
                                 </div>
@@ -220,10 +211,11 @@ class CostCalculator extends Component {
                                     <Popover 
                                         id="mealPlan" 
                                         title="Meal Plan" 
-                                        body="If you are not living on campus you will need to buy food. 
-                                        Enter the amount you plan on spending each month on food or groceries. 
-                                        If you have parents or families who are paying for your food, enter 0."
-                                        link="https://www.debtreductionservices.org/cost-groceries-person-month/"
+                                        body="Enter the cost of on-campus dining for the year.
+                                        Housing costs come with the requirment to purchase a meal plan.
+                                         However, there are different prices at different dorms and different options and prices for meal plans. 
+                                        Take a look at each option to see what your cost could be."
+                                        link="https://secure.touchnet.com/C20444_ustores/web/classic/store_main.jsp?STOREID=36&SINGLESTORE=true"
                                     /> 
                                 </div>
                             </CardBody>
@@ -242,7 +234,7 @@ class CostCalculator extends Component {
                         <Card>
                             <CardBody>
                                 <div className="mt-2">
-                                    <NumberFormat placeholder="Rent" name="rent" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({rent: parseFloat(value)}); this.props.rent(parseFloat(value));}}/>
+                                    <NumberFormat placeholder="Rent" name="rent" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({rent: parseFloat(value*12)}); this.props.rent(parseFloat(value*12));}}/>
                                     <FontAwesomeIcon id="rent" className="ml-2" icon={faQuestionCircle} size="1x" />
                                     <Popover 
                                         id="rent" 
@@ -254,7 +246,7 @@ class CostCalculator extends Component {
                                     /> 
                                 </div>
                                 <div className="mt-2">
-                                    <NumberFormat placeholder="Utilities" name="utilities" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({utilities: parseFloat(value)}); this.props.utilities(parseFloat(value));}}/>
+                                    <NumberFormat placeholder="Utilities" name="utilities" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({utilities: parseFloat(value*12)}); this.props.utilities(parseFloat(value*12));}}/>
                                     <FontAwesomeIcon id="utilities" className="ml-2" icon={faQuestionCircle} size="1x" />
                                     <Popover 
                                         id="utilities" 
@@ -264,16 +256,7 @@ class CostCalculator extends Component {
                                     /> 
                                 </div>
                                 <div className="mt-2">
-                                    <NumberFormat placeholder="Renter Insurance" name="rentInsurance" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({rentInsurance: parseFloat(value)}); this.props.rentInsurance(parseFloat(value));}}/>
-                                    <FontAwesomeIcon id="rentInsurance" className="ml-2" icon={faQuestionCircle} size="1x" />
-                                    <Popover 
-                                        id="rentInsurance" 
-                                        title="Renter Insurance" 
-                                        body="Information"
-                                    /> 
-                                </div>
-                                <div className="mt-2">
-                                    <NumberFormat placeholder="Food" name="food" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({food: parseFloat(value)}); this.props.food(parseFloat(value));}}/>
+                                    <NumberFormat placeholder="Food" name="food" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({food: parseFloat(value*12)}); this.props.food(parseFloat(value*12));}}/>
                                     <FontAwesomeIcon id="food" className="ml-2" icon={faQuestionCircle} size="1x" />
                                     <Popover 
                                         id="food" 
@@ -300,7 +283,7 @@ class CostCalculator extends Component {
                         <Card>
                             <CardBody>
                                 <div className="mt-2">
-                                    <NumberFormat placeholder="Gas or Bus Fair" name="gas" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({gas: parseFloat(value)}); this.props.gas(parseFloat(value));}}/>
+                                    <NumberFormat placeholder="Gas or Bus Fair" name="gas" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({gas: parseFloat(value*2)}); this.props.gas(parseFloat(value*2));}}/>
                                     <FontAwesomeIcon id="gas" className="ml-2" icon={faQuestionCircle} size="1x" />
                                     <Popover 
                                         id="gas" 
@@ -322,7 +305,7 @@ class CostCalculator extends Component {
                                     /> 
                                 </div>
                                 <div className="mt-2">
-                                    <NumberFormat placeholder="Car Insurance" name="carInsurance" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({carInsurance: parseFloat(value)}); this.props.carInsurance(parseFloat(value));}}/>
+                                    <NumberFormat placeholder="Car Insurance" name="carInsurance" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({carInsurance: parseFloat(value*12)}); this.props.carInsurance(parseFloat(value*12));}}/>
                                     <FontAwesomeIcon id="carInsurance" className="ml-2" icon={faQuestionCircle} size="1x" />
                                     <Popover 
                                         id="carInsurance" 
@@ -365,11 +348,11 @@ class CostCalculator extends Component {
                                     /> 
                                 </div>
                                 <div className="mt-2">
-                                    <NumberFormat placeholder="Money from Parents" name="moneyFromParents" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({moneyFromParents: parseFloat(value)}); this.props.moneyFromParents(parseFloat(value));}}/>
+                                    <NumberFormat placeholder="Financial support from family" name="moneyFromParents" thousandSeparator={true} prefix={'$'} onValueChange={ (values) => {const {value} = values; this.setState({moneyFromParents: parseFloat(value)}); this.props.moneyFromParents(parseFloat(value));}}/>
                                     <FontAwesomeIcon id="moneyFromParents" className="ml-2" icon={faQuestionCircle} size="1x" />
                                     <Popover 
                                         id="moneyFromParents" 
-                                        title="Money From Parents" 
+                                        title="Financial support from family" 
                                         body="Enter the amount of money you anticipate receiving from relatives to help you pay for college this year. Enter 0 if none."
                                     /> 
                                 </div>

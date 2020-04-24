@@ -15,27 +15,31 @@ class Summary extends Component {
         return ( 
             <div className="card">
                 <div className="card-body">
-                    <h5 className="card-title">Summary</h5>
+                    <h3 className="card-title mb-4">Summary Report</h3>
                     <table className="font-weight-bold" align="center">
                         <tr>
                             <td className="pr-3" align="right">Years to Graduate:</td>
-                            <td>{isNaN(this.props.semToGrad) ? "" : this.props.semToGrad}</td>
+                            <td align="left">{isNaN(this.props.semToGrad) ? "" : this.props.semToGrad}</td>
                         </tr>
                         <tr>
-                            <td className="pr-3" align="right">Total Year Cost:</td>
-                            <td><NumberFormat value={this.props.yearTotal} displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
+                            <td className="pr-3" align="right">One Year Cost:</td>
+                            <td align="left"><NumberFormat value={this.props.yearTotal} displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
                         </tr>
                         <tr>
-                            <td className="pr-3" align="right">Need funding for:</td>
-                            <td><NumberFormat value={this.props.yearRemainingCost} displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
+                            <td className="pr-3" align="right">Total Cost to Graduate:</td>
+                            <td align="left"><NumberFormat value={this.props.yearTotal * this.props.semToGrad} displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
                         </tr>
                         <tr>
-                            <td className={this.props.remainingHours <= 0 ? "red pr-3" : "pr-3"} align="right">Free Time in a Week:</td>
-                            <td>{this.props.remainingHours}</td>
+                            <td className="pr-3" align="right">Expenses to Cover:</td>
+                            <td align="left"><NumberFormat value={this.props.yearRemainingCost} displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
+                        </tr>
+                        <tr>
+                            <td className={this.props.remainingHours <= 0 ? "red pr-3" : "pr-3"} align="right">Unallocated Time in a Week:</td>
+                            <td align="left">{this.props.remainingHours}</td>
                         </tr>
                     </table>
 
-                    <h4>Helpful tips: </h4>
+                    <h4 className="mt-4 mb-3">Helpful Tips: </h4>
                     <div className={this.props.sleepHours < 42 ? "" : "hidden"}>
                         <p>We noticed that your plan includes sleeping significantly less than recomended amount. 
                             This can have a negative effect on your ability to focus, process informaiton as well 
@@ -88,7 +92,7 @@ class Summary extends Component {
                             school costs than if you graduate in 4 years and while you will earn &nbsp;
                             <NumberFormat value={this.props.income*2} displayType={'text'} thousandSeparator={true} prefix={'$'}/> &nbsp;in working wages, 
                             we see that you will miss out on &nbsp;
-                            <NumberFormat value={this.props.anticipatedSalary*2} displayType={'text'} thousandSeparator={true} prefix={'$'}/> &nbsp;
+                            <NumberFormat value={this.props.anticipatedSalary*2} displayType={'text'} thousandSeparator={true} prefix={'$'}/>&nbsp;
                             in wages in a job after graduating - a difference of &nbsp;
                             <NumberFormat value={(this.props.anticipatedSalary*2) - (this.props.income*2)} displayType={'text'} thousandSeparator={true} prefix={'$'}/>. Consider the experience and other benefits that you might realize if you were to graduate
                              sooner. Graduating sooner means taking more credits and you may need to leverage loans in order to work less. </p>

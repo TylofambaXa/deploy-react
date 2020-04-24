@@ -113,7 +113,9 @@ class TimeCalculator extends Component {
                         <Popover 
                                         id="classHours" 
                                         title="Hours In Class" 
-                                        body="How many hours in class will you spend per week?"
+                                        body="You will spend one hour in class for every credit. A three credit class means
+                                        three class hours each week. A 15 credit class load means you will be in class 15
+                                        hours each week."
                                     />  
                         </h6>
                         <Slider marks={classHours} step={10} defaultValue={70} name="classHours" onChange={this.handleClassChange}/>
@@ -129,6 +131,7 @@ class TimeCalculator extends Component {
                                         body="A general rule is that you should spend 2 hours studying, reading, 
                                         writing and working on projects outside of each hour spent in class. 
                                         That would mean 6 hours of time outside of class for the typical 3 credit class."
+                                        link="https://www.umflint.edu/advising/surviving_college"
                                     />  
                         </h6>
                         <Slider marks={studyHours} step={10} defaultValue={40} name="studyHours" onChange={this.handleStudyChange}/>
@@ -140,7 +143,10 @@ class TimeCalculator extends Component {
                         <Popover 
                                         id="sleepHours" 
                                         title="Hours Sleeping" 
-                                        body="How many hours sleeping will you spend per day?"
+                                        body="Adults generally need 7-9 hours of sleep each night. 
+                                        Reduced sleep can impact your phsyical, emotoinal, cognitive, 
+                                        and mental health. Make sure you are priotizing your health and sleep."
+                                        link="https://www.mayoclinic.org/healthy-lifestyle/adult-health/expert-answers/how-many-hours-of-sleep-are-enough/faq-20057898"
                                     />  
                         </h6>
                         <Slider marks={sleepHours} step={20} defaultValue={60} name="sleepHours" onChange={this.handleSleepChange}/>
@@ -152,7 +158,10 @@ class TimeCalculator extends Component {
                         <Popover 
                                         id="workHours" 
                                         title="Hours Working" 
-                                        body="How many hours working will you spend per week?"
+                                        body="Enter the number of hours do you anticipate working outside of class? 
+                                        Working can be great to help pay for expenses and gain relevant experience. 
+                                        You will also need to weigh how to balance your time with work and succeeding academically?"
+                                        link="http://www.css.edu/the-sentinel-blog/working-while-in-college-weighing-the-pros-and-cons.html"
                                     />  
                         </h6>
                         <Slider marks={workHours} step={10} defaultValue={30} name="workHours" onChange={this.handleWorkChange}/>
@@ -164,7 +173,7 @@ class TimeCalculator extends Component {
                         <Popover 
                                         id="eatHours" 
                                         title="Hours Eating" 
-                                        body="How many hours eating/making food will you spend per day?"
+                                        body="Enter the amount of time you will need to prep your get groceries, meals, and eat."
                                     />  
                         </h6>
                         <Slider marks={eatHours} step={100/3} defaultValue={100/3} name="eatHours" onChange={this.handleEatChange}/>
@@ -176,7 +185,9 @@ class TimeCalculator extends Component {
                         <Popover 
                                         id="commuteHours" 
                                         title="Hours Commuting" 
-                                        body="How many hours commuting will you spend per day?"
+                                        body="Enter the amount of time you plan to spend driving back and forth to 
+                                        campus each day. Remember to account for time in the library, study groups, 
+                                        or using the writing center and/or math lab."
                                     />  
                         </h6>
                         <Slider marks={commuteHours} step={25} defaultValue={25} name="commuteHours" onChange={this.handleCommuteChange}/>
@@ -188,7 +199,7 @@ class TimeCalculator extends Component {
                         <Popover 
                                         id="prepHours" 
                                         title="Hours Getting Ready" 
-                                        body="How many hours getting ready will you spend per day?"
+                                        body="Enter the time you need each day to get ready and prep before you get going."
                                     />  
                         </h6>
                         <Slider marks={commuteHours} step={25} defaultValue={25} name="prepHours" onChange={this.handlePrepChange}/>
@@ -200,7 +211,8 @@ class TimeCalculator extends Component {
                         <Popover 
                                         id="selfHours" 
                                         title="Hours For Self Care" 
-                                        body="How many hours of self care will you need per day?"
+                                        body="Eneter the number of hours you need for spending social time with 
+                                        family, friends, exercising, or spending time in nature."
                                     />  
                         </h6>
                         <Slider marks={commuteHours} step={25} defaultValue={25} name="selfHours" onChange={this.handleSelfChange}/>
