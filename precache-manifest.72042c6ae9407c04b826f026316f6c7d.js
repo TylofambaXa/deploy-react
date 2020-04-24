@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5f02c1db61310778f11547b3dbc8fda6",
+    "revision": "3f9078f4b73ffb7fc61f9d88a936f8e8",
     "url": "/college-as-an-investment/index.html"
   },
   {
-    "revision": "69bec03b155b48bf135c",
+    "revision": "d3c7dcc2e7567cb1815d",
     "url": "/college-as-an-investment/static/css/2.de677ede.chunk.css"
   },
   {
-    "revision": "2b03d65e0930a415b22d",
+    "revision": "0472644a7d5bcbcc0000",
     "url": "/college-as-an-investment/static/css/main.2a8c3586.chunk.css"
   },
   {
-    "revision": "69bec03b155b48bf135c",
-    "url": "/college-as-an-investment/static/js/2.0b1a1ca3.chunk.js"
+    "revision": "d3c7dcc2e7567cb1815d",
+    "url": "/college-as-an-investment/static/js/2.aec419c9.chunk.js"
   },
   {
     "revision": "3a5359d431b8190dc2f36e4703f39768",
-    "url": "/college-as-an-investment/static/js/2.0b1a1ca3.chunk.js.LICENSE.txt"
+    "url": "/college-as-an-investment/static/js/2.aec419c9.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2b03d65e0930a415b22d",
-    "url": "/college-as-an-investment/static/js/main.c6689cb0.chunk.js"
+    "revision": "0472644a7d5bcbcc0000",
+    "url": "/college-as-an-investment/static/js/main.b4b4d53d.chunk.js"
   },
   {
     "revision": "3757d8313a276c9981ba",
